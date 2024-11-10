@@ -1,0 +1,137 @@
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+/* global variables for color */
+:root{
+    --Red: hsl(0, 78%, 62%);
+    --Cyan: hsl(180, 62%, 55%);
+    --Orange: hsl(34, 97%, 64%);
+    --Blue: hsl(212, 86%, 64%);
+    --VeryDarkBlue: hsl(234, 12%, 34%);
+    --GrayishBlue: hsl(229, 6%, 66%);
+    --VeryLightGray: hsl(0, 0%, 98%);
+}
+body{
+    background-color:var(--VeryLightGray);
+    padding-bottom: 20px;
+}
+header{
+    text-align: center;
+    margin: 30px 0 0;
+}
+/* text styling */
+h1{
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 1.25em;
+    span{
+        font-weight: normal;
+        color: var(--VeryDarkBlue);
+    }
+}
+header p{
+    font-size: 16px;
+    width: 40%;
+    margin: 10px auto;
+    color: var(--GrayishBlue);
+}
+main{
+    width: 80%;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,340px));
+    grid-template-areas:
+    'box1 box2 box4'
+    'box1 box3 box4';
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+main h2{
+    font-size: 24px;
+    font-weight: 600;
+}
+main p{
+    font-size: 16px;
+    margin: 10px 0 20px;
+    color: var(--GrayishBlue);
+}
+main img{
+    width: 40px;
+    float: right;
+}
+section{
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
+}
+.box1{
+    grid-area: box1;
+    border-top: 3px solid var(--Cyan);
+}
+.box2{
+    grid-area: box2;
+    border-top: 3px solid var(--Red);
+}
+.box3{
+    grid-area: box3;
+    border-top: 3px solid var(--Orange);
+}
+.box4{
+    grid-area: box4;
+    border-top: 3px solid var(--Blue);
+}
+@media screen and (max-width:1320px) {
+    main{
+        width: 100%;
+    }
+}
+@media screen and (max-width:1150px) {
+    main{
+        grid-template-areas:
+        'box1 box2'
+        'box3 box4';
+    }
+}
+@media screen and (max-width:750px) {
+    main{
+        grid-template-columns: repeat(auto-fit,minmax(150px,80%));
+        grid-template-areas:
+        'box1'
+        'box2'
+        'box3'
+        'box4';
+    }
+    header p{
+        width: 80%;
+    }
+}
+@media screen and (max-width:450px) {
+    header h1{
+        font-size: 24px;
+    }
+    header p{
+        width: 100%;
+    }
+    body{
+        padding: 20px;
+    }
+    main{
+        grid-template-columns: repeat(auto-fit,minmax(150px,100%));
+    }
+}
+@media screen and (max-width:350px) {
+    header h1{
+        font-size: 24px;
+        text-wrap:nowrap;
+    }
+    body{
+        padding:10px;
+    }
+}
